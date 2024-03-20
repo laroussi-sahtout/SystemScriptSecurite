@@ -1,0 +1,22 @@
+import csv
+
+# Données à ajouter
+donnees = [
+    ["Jean", 25, "Paris"],
+    ["Marie", 30, "Lyon"],
+    ["Pierre", 22, "Marseille"],
+    ["Sophie", 35, "Toulouse"]
+]
+
+# Chemin du fichier CSV
+fichier_csv = "donnees.csv"
+
+# Écriture des données dans le fichier CSV
+with open(fichier_csv, mode='w', newline='') as file:
+    writer = csv.writer(file)
+    # Écrire l'en-tête si nécessaire
+    writer.writerow(['Nom', 'Âge', 'Ville'])
+    # Écrire les données
+    writer.writerows(donnees)
+
+print("Les données ont été ajoutées avec succès au fichier CSV.")
